@@ -84,7 +84,7 @@ function MainPage() {
         <Row className="g-4">
           {posts.map((post, idx) => (
             <Col key={idx} xs={12} sm={6} md={4}>
-              <Card className="post-card">
+              <Card className="post-card" onClick={() => navigate(`/post/${idx}`)} style={{ cursor: 'pointer' }}>
                 <Row className="g-0">
                   <Col xs={4} md={4}>
                     <Card.Img src={post.image} className="card-img" />
