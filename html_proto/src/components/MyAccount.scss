@@ -1,0 +1,102 @@
+.header {
+  padding: 20px;
+}
+
+.my-account-page {
+    padding: 2rem;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center; // center horizontally
+
+  
+    .content-wrapper {
+      
+      width: 100%;
+      max-width: 800px;  // << added
+    }
+  
+    .profile-pic {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+    }
+  
+    .main-profile-pic {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+    }
+  
+    .account-info {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+    }
+  
+    .posts-section {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        
+        .card-header {
+          background: transparent;
+          border-bottom: none;
+          font-weight: bold;
+          font-size: 1.2rem;
+        }
+      
+        .list-group {
+          background: transparent;
+        }
+      
+        .post-item {
+          background: white;
+          border-radius: 12px;
+          margin-bottom: 1rem;
+          padding: 1rem;
+          border: none; // << Remove the thin gray line
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); // << Add soft floating effect
+      
+          display: flex;
+          align-items: center;
+      
+          .post-thumbnail {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 8px;
+          }
+      
+          .post-content {
+            margin-left: 1rem;
+      
+            small {
+              color: #007bff; // Bootstrap blue
+              font-weight: bold;
+            }
+      
+            h6 {
+              margin: 0.5rem 0 0;
+              font-size: 1rem;
+              font-weight: 600;
+            }
+      
+            .post-meta {
+              font-size: 0.85rem;
+              color: gray;
+              margin-top: 0.5rem;
+      
+              i {
+                font-size: 1rem;
+                margin-right: 0.3rem;
+              }
+            }
+          }
+        }
+      }
+      
+  }
+  
