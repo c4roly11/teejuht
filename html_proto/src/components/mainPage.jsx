@@ -1,6 +1,6 @@
 import React from "react";
 import "./MainPage.scss";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 import {
   Container,
@@ -11,15 +11,10 @@ import {
   Form,
   Navbar,
   InputGroup,
+  Stack,
 } from "react-bootstrap";
 
 function MainPage() {
-  const navigate = useNavigate();
-
-  const handleLoginClick = () => {
-    navigate('/login');
-  };
-
   const posts = [
     {
       category: "HEAOLU",
@@ -57,15 +52,31 @@ function MainPage() {
 
   return (
     <div className="main-page">
-      <Navbar expand="lg" className="custom-navbar mb-4 p-3 rounded">
+      <Navbar expand="lg" className="justify-content-between">
         <Container>
-          <Navbar.Brand style={{ fontFamily: "Borel", fontSize: "40px" }}>
-            Teejuht
-          </Navbar.Brand>
-          <InputGroup style={{ maxWidth: "400px" }}>
-            <Form.Control placeholder="Otsi postitust" />
-          </InputGroup>
-          <Button className="custom-button mb-3" onClick={handleLoginClick}>Logi sisse</Button>
+          <Stack
+            direction="horizontal"
+            gap={4}
+            className="w-100 justify-content-between"
+          >
+            {/* Brand */}
+            <Navbar.Brand style={{ fontFamily: "Borel", fontSize: "40px" }}>
+              Teejuht
+            </Navbar.Brand>
+
+            {/* Search Form */}
+            <Form className="d-flex">
+              <Form.Control
+                type="text"
+                placeholder="Otsi postitust"
+                className="me-2"
+              />
+              <Button type="submit">Submit</Button>
+            </Form>
+
+            {/* Login Button */}
+            <Button className="custom-button">Logi sisse</Button>
+          </Stack>
         </Container>
       </Navbar>
 
