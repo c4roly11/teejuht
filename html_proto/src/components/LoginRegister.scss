@@ -1,0 +1,47 @@
+/* LoginRegister.scss */
+
+/* Üldine konteiner stiil */
+.login-register-container {
+    width: 90%;
+    max-width: 400px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin: auto;
+  }
+  
+  /* Parem vertikaalne paigutus */
+  .login-register-container h3,
+  .login-register-container p {
+    text-align: center;
+  }
+  
+  /* Taust pilt */
+  .login-register-background {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .login-register-tabs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  /* Muud stiilid sisselogimise ja registreerimise nuppudele */
+  .login-register-btn {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  /* Väikesed muudatused sisule */
+  .login-register-link {
+    text-align: center;
+  }
+  

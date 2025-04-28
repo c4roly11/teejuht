@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Borel";
-  src: url("/Users/andrarajaste/iti0209_2025/html_proto/public/fonts/Borel-Regular.ttf")
+  src: url("/Users/Laptop/iti0209_2025/html_proto/public/fonts/Borel-Regular.ttf")
     format("truetype");
   font-weight: normal;
   font-style: normal;
@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: "ABeeZee";
-  src: url("/Users/andrarajaste/iti0209_2025/html_proto/public/fonts/ABeeZee-Regular.ttf")
+  src: url("/Users/Laptop/iti0209_2025/html_proto/public/fonts/ABeeZee-Regular.ttf")
     format("truetype");
   font-weight: normal;
   font-style: normal;
@@ -20,7 +20,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background-image: url("/Users/andrarajaste/iti0209_2025/html_proto/public/background.jpg");
+  background-image: url("/Users/Laptop/iti0209_2025/html_proto/public/background.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

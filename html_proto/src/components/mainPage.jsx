@@ -1,5 +1,6 @@
 import React from "react";
 import "./MainPage.scss";
+import { useNavigate } from 'react-router-dom';
 
 import {
   Container,
@@ -13,6 +14,12 @@ import {
 } from "react-bootstrap";
 
 function MainPage() {
+  const navigate = useNavigate();
+
+  const handleLoginClick = () => {
+    navigate('/login');
+  };
+
   const posts = [
     {
       category: "HEAOLU",
@@ -58,7 +65,7 @@ function MainPage() {
           <InputGroup style={{ maxWidth: "400px" }}>
             <Form.Control placeholder="Otsi postitust" />
           </InputGroup>
-          <Button className="custom-button mb-3">Logi sisse</Button>
+          <Button className="custom-button mb-3" onClick={handleLoginClick}>Logi sisse</Button>
         </Container>
       </Navbar>
 
