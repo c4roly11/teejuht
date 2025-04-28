@@ -1,7 +1,7 @@
-import NewPost from "./components/NewPost.jsx";
+import MyAccount from "./components/MyAccount.jsx";
 
 function App() {
-  return <NewPost />;
+  return <MyAccount />;
 }
 
 export default App;
