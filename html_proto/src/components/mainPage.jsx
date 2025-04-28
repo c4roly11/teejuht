@@ -15,6 +15,11 @@ import {
 } from "react-bootstrap";
 
 function MainPage() {
+  const navigate = useNavigate();
+  const handleLoginClick = () => {
+    navigate('/login');
+  };
+
   const posts = [
     {
       category: "HEAOLU",
@@ -75,7 +80,7 @@ function MainPage() {
             </Form>
 
             {/* Login Button */}
-            <Button className="custom-button">Logi sisse</Button>
+            <Button className="custom-button" onClick={handleLoginClick}>Logi sisse</Button>
           </Stack>
         </Container>
       </Navbar>
