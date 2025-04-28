@@ -1,6 +1,6 @@
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
-import 'bootstrap/dist/css/bootstrap.min.css';   // Bootstrap stiil
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './LoginRegister.scss';
 import React, { useState, useEffect } from 'react';
 import {
   MDBContainer,
@@ -12,7 +12,6 @@ import {
   MDBBtn,
   MDBInput
 } from 'mdb-react-ui-kit';
-import './LoginRegister.scss';  // Siin importige SCSS fail
 
 function LoginRegister() {
   const [activeTab, setActiveTab] = useState('login');   // 'login' või 'register'
@@ -53,9 +52,9 @@ function LoginRegister() {
 
         <MDBTabsContent>
           <MDBTabsPane open={showLoginForm}>
-            <h3>Tere tulemast tagasi!</h3>
-            <p>Logi sisse oma kontoga</p>
-            <p>Sinu anonüümsus on tagatud</p>
+            <h3 className="text-center">Tere tulemast tagasi!</h3>
+            <p className="text-center">Logi sisse oma kontoga<br>
+            </br>Sinu anonüümsus on tagatud</p>
 
             <MDBInput wrapperClass="mb-4" label="Kasutajanimi" id="form1-email" type="text" />
             <MDBInput wrapperClass="mb-4" label="Parool" id="form2-password" type="password" />
@@ -70,8 +69,8 @@ function LoginRegister() {
           </MDBTabsPane>
 
           <MDBTabsPane open={showRegisterForm}>
-            <h3>Tere tulemast!</h3>
-            <p>Konto registreerides tagatakse sinu täielik privaatsus ja anonüümsus!</p>
+            <h3 className="text-center">Tere tulemast!</h3>
+            <p className="text-center">Konto registreerides tagatakse sinu täielik privaatsus ja anonüümsus!</p>
 
             <MDBInput wrapperClass="mb-4" label="Nimi" id="form3-name" type="text" />
             <MDBInput wrapperClass="mb-4" label="Parool" id="form4-password" type="password" />
