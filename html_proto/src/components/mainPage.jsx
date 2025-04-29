@@ -1,46 +1,38 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./MainPage.scss";
 import { useNavigate } from "react-router-dom";
-
 import { Container, Row, Col, Card } from "react-bootstrap";
 
 function MainPage() {
   const navigate = useNavigate();
+  const [posts, setPosts] = useState([]);
 
-  const posts = [
-    {
-      category: "HEAOLU",
-      username: "terapeut_mare_287",
-      description: "Parimad nipid stressi maandamiseks",
-      likes: 14,
-      time: "30min ago",
-      image: "https://picsum.photos/id/237/100/130",
-    },
-    {
-      category: "FINANTS",
-      username: "edukas_tudeng300",
-      description: "Kuidas tudengina raha säästa?",
-      likes: 25,
-      time: "1hr ago",
-      image: "https://picsum.photos/id/10/100/130",
-    },
-    {
-      category: "HEAOLU",
-      username: "und_pole_207",
-      description: "Magan nii halvasti, hea une nippe?",
-      likes: 53,
-      time: "2hr ago",
-      image: "https://picsum.photos/id/26/100/130",
-    },
-    {
-      category: "TEHNOLOOGIA",
-      username: "chatgpt_bff_1010",
-      description: "Kuidas AI-d kasutades koolis mitte vahele jääda?",
-      likes: 102,
-      time: "2.5hr ago",
-      image: "https://picsum.photos/id/23/100/130",
-    },
-  ];
+  useEffect(() => {
+    const savedPosts = JSON.parse(localStorage.getItem("posts")) || [];
+
+    // You can remove this array once you rely only on localStorage
+    const defaultPosts = [
+      {
+        category: "HEAOLU",
+        username: "terapeut_mare_287",
+        description: "Parimad nipid stressi maandamiseks",
+        likes: 14,
+        time: "30min ago",
+        image: "https://picsum.photos/id/237/100/130",
+      },
+      {
+        category: "FINANTS",
+        username: "edukas_tudeng300",
+        description: "Kuidas tudengina raha säästa?",
+        likes: 25,
+        time: "1hr ago",
+        image: "https://picsum.photos/id/10/100/130",
+      },
+    ];
+
+    // Merge or use only savedPosts
+    setPosts([...savedPosts, ...defaultPosts]);
+  }, []);
 
   return (
     <div className="main-page">
@@ -55,25 +47,30 @@ function MainPage() {
               >
                 <Row className="g-0">
                   <Col xs={4} md={4}>
-                    <Card.Img src={post.image} className="card-img" />
+                    <Card.Img
+                      src={post.image || "https://picsum.photos/100/130"} // fallback
+                      className="card-img"
+                    />
                   </Col>
                   <Col md={8}>
                     <Card.Body className="card-body">
                       <Card.Title className="card-title">
-                        {post.category}
+                        {post.category || "Kategooria puudub"}
                       </Card.Title>
                       <Card.Subtitle className="card-subtitle">
-                        {post.username}
+                        {post.username || "Anonüümne"}
                       </Card.Subtitle>
                       <Card.Text className="card-text">
-                        {post.description}
+                        {post.description || post.title}
                       </Card.Text>
                       <div className="card-footer">
                         <div>
-                          <i className="bi bi-hand-thumbs-up"></i> {post.likes}
+                          <i className="bi bi-hand-thumbs-up"></i>{" "}
+                          {post.likes || 0}
                         </div>
                         <div>
-                          <i className="bi bi-clock"></i> {post.time}
+                          <i className="bi bi-clock"></i>{" "}
+                          {post.time || "Just nüüd"}
                         </div>
                         <div>
                           <i className="bi bi-bookmark"></i>
