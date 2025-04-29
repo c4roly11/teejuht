@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import "./Post.scss";
 
@@ -47,7 +47,11 @@ function Post() {
     },
   ];
 
-  const post = posts[id];
+  const savedPosts = JSON.parse(localStorage.getItem("posts")) || [];
+  const allPosts = [...savedPosts, ...posts]; // new first
+  const post = allPosts[id];
+  const [likes, setLikes] = useState(post.likes || 0);
+  const [bookmarked, setBookmarked] = useState(false);
 
   if (!post) {
     return (
@@ -74,6 +78,26 @@ function Post() {
                   {post.category} - {post.username} - {post.time}
                 </Card.Subtitle>
                 <Card.Text>{post.content}</Card.Text>
+                <div className="d-flex justify-content-start gap-3 mt-4">
+                  <Button
+                    variant="outline-primary"
+                    onClick={() => setLikes(likes + 1)}
+                  >
+                    👍 Like ({likes})
+                  </Button>
+                  <Button
+                    variant="outline-secondary"
+                    onClick={() => setLikes(likes > 0 ? likes - 1 : 0)}
+                  >
+                    👎 Dislike
+                  </Button>
+                  <Button
+                    variant={bookmarked ? "success" : "outline-success"}
+                    onClick={() => setBookmarked(!bookmarked)}
+                  >
+                    {bookmarked ? "🔖 Bookmarked" : "🔖 Bookmark"}
+                  </Button>
+                </div>
               </Card.Body>
             </Card>
           </Col>
