@@ -21,6 +21,7 @@ function Post() {
 
   const posts = [
     {
+      id: 1,
       category: "HEAOLU",
       username: "terapeut_mare_287",
       description: "Parimad nipid stressi maandamiseks",
@@ -31,6 +32,7 @@ function Post() {
         "Stress on tänapäeva elu lahutamatu osa, kuid on mitmeid tõhusaid meetodeid, mis aitavad sul seda paremini hallata. Üks lihtne ja tõhus viis on regulaarselt hingamisharjutusi teha. Hinga sügavalt sisse ja välja, keskendudes igale hingetõmbele. Samuti on oluline leida aega enda jaoks – mine loodusesse jalutama või tegele mõne lemmiktegevusega, mis sind rahustab.\n\nSamuti ära unusta tervislikku toitumist ja piisavat und, mis on stressiga toimetuleku võti. Toitumine mängib olulist rolli, sest teatud toidud, nagu täisteratooted, pähklid ja puuviljad, aitavad tasakaalustada keha stressireaktsioone. Kui sul on pidev unepuudus, siis võib stressi tase samuti tõusta, seega leia viise, kuidas tagada endale kvaliteetne uni, näiteks vältides kofeiini õhtuti.",
     },
     {
+      id: 2,
       category: "FINANTS",
       username: "edukas_tudeng300",
       description: "Kuidas tudengina raha säästa?",
@@ -41,6 +43,7 @@ function Post() {
         "Tudengielu võib olla rahaliselt kitsi, kuid siiski on võimalik igapäevaelu kulusid vähendada. Üks lihtsamaid nippe on eelarve koostamine – märgi üles kõik igakuised kulutused ja püüa neid hallata. Samuti tasub toitu ette planeerida ja kokkamine kodus on sageli odavam kui väljas söömine. Kui võimalik, kasuta tudengikartide allahindlusi ja võrdle hindasid enne suuremate ostude tegemist.\n\nKuid mul on olnud probleeme ka säästmisvõimaluste leidmisega, kuna tihti ei jätku raha isegi kõige põhiasjade jaoks. Olen proovinud erinevaid säästmisnippe, kuid need ei ole alati toiminud. Kas teil on mõni soovitus, kuidas oleks võimalik tudengina veelgi rohkem raha säästa, ilma et see liiga palju elukvaliteeti halvendaks?",
     },
     {
+      id: 3,
       category: "HEAOLU",
       username: "und_pole_207",
       description: "Magan nii halvasti, hea une nippe?",
@@ -51,6 +54,7 @@ function Post() {
         "Mul on pidevalt probleeme magamisega – tihti ärkan öösel üles ja ei saa enam magama jääda. Olen proovinud erinevaid unehügieeni nippe, nagu ekraanide vältimine enne magamaminekut ja magamistoa temperatuuri reguleerimine, kuid see ei ole eriti aidanud. Samuti olen lugenud, et regulaarselt liikumine võiks aidata, kuid isegi pärast õhtuseid jalutuskäike on mul raske magama jääda.\n\nKas kellelgi on veel kogemusi, kuidas saaks paremini magama jääda? Mida olete proovinud ja kas see on aidanud? Jagage oma soovitusi, palun!",
     },
     {
+      id: 4,
       category: "TEHNOLOOGIA",
       username: "chatgpt_bff_1010",
       description: "Kuidas AI-d kasutades koolis mitte vahele jääda?",
@@ -64,7 +68,7 @@ function Post() {
 
   const savedPosts = JSON.parse(localStorage.getItem("posts")) || [];
   const allPosts = [...savedPosts, ...posts];
-  const post = allPosts[id];
+  const post = allPosts.find((p) => p.id === parseInt(id));
   const [likes, setLikes] = useState(post?.likes || 0);
   const [bookmarked, setBookmarked] = useState(false);
 

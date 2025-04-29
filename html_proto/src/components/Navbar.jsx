@@ -15,12 +15,12 @@ function Navbar() {
   const { isLoggedIn } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  const handleLoginClick = () => {
-    navigate("/login");
-  };
+  const handleLoginClick = () => navigate("/login");
+  const handleProfileClick = () => navigate("/account");
 
-  const handleProfileClick = () => {
-    navigate("/account");
+  const handleCategoryClick = (category) => {
+    const encoded = encodeURIComponent(category.toLowerCase());
+    navigate(`/category/${encoded}`);
   };
 
   const categories = [
@@ -47,7 +47,7 @@ function Navbar() {
         />
 
         <BsNavbar.Collapse id="navbar-collapse" className="ms-auto">
-          {/* Desktop Stack */}
+          {/* Desktop */}
           <Stack
             direction="horizontal"
             gap={4}
@@ -70,7 +70,12 @@ function Navbar() {
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 {categories.map((cat, index) => (
-                  <Dropdown.Item key={index}>{cat}</Dropdown.Item>
+                  <Dropdown.Item
+                    key={index}
+                    onClick={() => handleCategoryClick(cat)}
+                  >
+                    {cat}
+                  </Dropdown.Item>
                 ))}
               </Dropdown.Menu>
             </Dropdown>
@@ -79,7 +84,6 @@ function Navbar() {
               <img
                 src="https://i.pravatar.cc/40"
                 alt="Profiilipilt"
-                aria-label="Profiil"
                 className="rounded-circle"
                 style={{ width: "40px", height: "40px", cursor: "pointer" }}
                 onClick={handleProfileClick}
@@ -91,7 +95,7 @@ function Navbar() {
             )}
           </Stack>
 
-          {/* Mobile Stack */}
+          {/* Mobile */}
           <Stack direction="vertical" gap={3} className="d-lg-none mt-3">
             <Form className="d-flex custom-search-form">
               <Form.Control
@@ -108,7 +112,12 @@ function Navbar() {
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 {categories.map((cat, index) => (
-                  <Dropdown.Item key={index}>{cat}</Dropdown.Item>
+                  <Dropdown.Item
+                    key={index}
+                    onClick={() => handleCategoryClick(cat)}
+                  >
+                    {cat}
+                  </Dropdown.Item>
                 ))}
               </Dropdown.Menu>
             </Dropdown>
@@ -117,7 +126,6 @@ function Navbar() {
               <img
                 src="https://i.pravatar.cc/40"
                 alt="Profiilipilt"
-                aria-label="Profiil"
                 className="rounded-circle"
                 style={{ width: "40px", height: "40px", cursor: "pointer" }}
                 onClick={handleProfileClick}
