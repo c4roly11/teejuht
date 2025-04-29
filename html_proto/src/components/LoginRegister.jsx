@@ -35,7 +35,8 @@ function LoginRegister() {
 
   return (
     <div className="login-register-background">
-      <MDBContainer className="login-register-container">
+        <div className="login-register-container">
+        <MDBContainer>
         <MDBTabs pills justify className="login-register-tabs">
           <MDBTabsItem>
             <MDBTabsLink
@@ -120,6 +121,7 @@ function LoginRegister() {
           </MDBTabsPane>
         </MDBTabsContent>
       </MDBContainer>
+      </div>
     </div>
   );
 }

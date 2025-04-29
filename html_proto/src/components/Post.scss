@@ -1,19 +1,23 @@
 .post-page {
-    padding-bottom: 40px;
-  
-    .card-title {
-      font-size: 1.5rem;
-    }
-  
-    .card-subtitle {
-      font-size: 1rem;
-      color: #6c757d;
-    }
-  
-    @media (max-width: 767px) {
-      .card-body {
-        text-align: center;
-      }
+  padding-bottom: 40px;
+
+  .brand-logo {
+    font-family: 'Borel', cursive;
+    font-size: 40px;
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+  }
+
+  .card-subtitle {
+    font-size: 1rem;
+    color: #6c757d;
+  }
+
+  @media (max-width: 767px) {
+    .card-body {
+      text-align: center;
     }
   }
-  
+}
