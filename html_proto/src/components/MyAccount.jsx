@@ -1,48 +1,10 @@
 import React from "react";
-import {
-  Card,
-  Button,
-  Image,
-  ListGroup,
-  Nav,
-  Navbar,
-  Container,
-  Stack,
-  Form,
-} from "react-bootstrap";
+import { Card, Button, Image, ListGroup } from "react-bootstrap";
 import "./MyAccount.scss";
 
 const MyAccount = () => {
   return (
     <div className="header">
-      <Navbar expand="lg" className="justify-content-between">
-        <Container>
-          <Stack
-            direction="horizontal"
-            gap={4}
-            className="w-100 justify-content-between"
-          >
-            <Navbar.Brand style={{ fontFamily: "Borel", fontSize: "40px" }}>
-              Teejuht
-            </Navbar.Brand>
-
-            <Form className="d-flex">
-              <Form.Control
-                type="text"
-                placeholder="Otsi postitust"
-                className="me-2"
-              />
-              <Button type="submit">Submit</Button>
-            </Form>
-
-            <Image
-              src="https://picsum.photos/id/31/50"
-              roundedCircle
-              className="profile-pic"
-            />
-          </Stack>
-        </Container>
-      </Navbar>
       <div className="my-account-page">
         <div className="content-wrapper">
           <header className="align-items-center mb-4">

@@ -18,7 +18,14 @@ function App() {
             </WithNavbar>
           }
         />
-        <Route path="/post/:id" element={<Post />} />
+        <Route
+          path="/post/:id"
+          element={
+            <WithNavbar>
+              <Post />
+            </WithNavbar>
+          }
+        />
         <Route path="/login" element={<LoginRegister />} />
         <Route
           path="/account"
@@ -44,7 +51,7 @@ function App() {
     return (
       <>
         <Navbar />
-        <div className="pt-5">{children}</div>
+        <div className="pt-3">{children}</div>
       </>
     );
   }
