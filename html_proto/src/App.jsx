@@ -5,45 +5,49 @@ import Post from "./components/Post.jsx";
 import MyAccount from "./components/MyAccount.jsx";
 import NewPost from "./components/NewPost.jsx";
 import Navbar from "./components/Navbar.jsx";
+import BottomToolbar from "./components/BottomToolbar.jsx";
 
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <WithNavbar>
-              <MainPage />
-            </WithNavbar>
-          }
-        />
-        <Route
-          path="/post/:id"
-          element={
-            <WithNavbar>
-              <Post />
-            </WithNavbar>
-          }
-        />
-        <Route path="/login" element={<LoginRegister />} />
-        <Route
-          path="/account"
-          element={
-            <WithNavbar>
-              <MyAccount />
-            </WithNavbar>
-          }
-        />
-        <Route
-          path="/new-post"
-          element={
-            <WithNavbar>
-              <NewPost />
-            </WithNavbar>
-          }
-        />
-      </Routes>
+      <div className="app-container">
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <WithNavbar>
+                <MainPage />
+              </WithNavbar>
+            }
+          />
+          <Route
+            path="/post/:id"
+            element={
+              <WithNavbar>
+                <Post />
+              </WithNavbar>
+            }
+          />
+          <Route path="/login" element={<LoginRegister />} />
+          <Route
+            path="/account"
+            element={
+              <WithNavbar>
+                <MyAccount />
+              </WithNavbar>
+            }
+          />
+          <Route
+            path="/new-post"
+            element={
+              <WithNavbar>
+                <NewPost />
+              </WithNavbar>
+            }
+          />
+        </Routes>
+        <BottomToolbar />
+      </div>
     </Router>
   );
 
