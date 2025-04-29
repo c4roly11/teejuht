@@ -15,11 +15,11 @@ const NewPost = () => {
       title,
       content,
       category,
-      username: "anonüümne", // or allow input later
-      description: title, // used for card previews
+      username: "anonüümne",
+      description: title,
       likes: 0,
       time: "just nüüd",
-      image: "https://picsum.photos/100/130", // placeholder
+      image: "https://picsum.photos/100/130",
     };
 
     // Get existing posts from localStorage
@@ -38,8 +38,6 @@ const NewPost = () => {
 
   return (
     <div className="new-post-page">
-      <div className="back-arrow">&#8592;</div>
-
       <h2 className="page-title">Uus postitus</h2>
 
       <Card className="post-card">
