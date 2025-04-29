@@ -7,6 +7,7 @@ import MyAccount from "./components/MyAccount.jsx";
 import NewPost from "./components/NewPost.jsx";
 import Navbar from "./components/Navbar.jsx";
 import BottomToolbar from "./components/BottomToolbar.jsx";
+import CategoryPage from "./components/CategoryPage.jsx";
 
 export const AuthContext = createContext();
 
@@ -48,6 +49,15 @@ function App() {
               element={
                 <WithNavbar>
                   <NewPost />
+                </WithNavbar>
+              }
+            />
+
+            <Route
+              path="/category/:categoryName"
+              element={
+                <WithNavbar>
+                  <CategoryPage />
                 </WithNavbar>
               }
             />
