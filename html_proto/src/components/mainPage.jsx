@@ -65,7 +65,7 @@ function MainPage() {
       <Container>
         <Row className="g-4">
           {posts.map((post, idx) => (
-            <PostCard key={idx} post={post} index={idx} />
+            <PostCard key={idx} post={post} index={post.id} />
           ))}
         </Row>
       </Container>
