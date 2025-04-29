@@ -8,7 +8,7 @@ function Post() {
   const navigate = useNavigate();
 
   const [comments, setComments] = useState([
-    { username: "krabi_vanaamees_34", text: "Väga kasulik postitus!" }
+    { username: "krabi_vanaamees_34", text: "Väga kasulik postitus!" },
   ]);
   const [newComment, setNewComment] = useState("");
 
@@ -28,7 +28,7 @@ function Post() {
       time: "30min ago",
       image: "https://picsum.photos/id/237/600/400",
       content:
-        "Stress on tänapäeva elu lahutamatu osa, kuid on mitmeid tõhusaid meetodeid, mis aitavad sul seda paremini hallata. Üks lihtne ja tõhus viis on regulaarselt hingamisharjutusi teha..."
+        "Stress on tänapäeva elu lahutamatu osa, kuid on mitmeid tõhusaid meetodeid, mis aitavad sul seda paremini hallata. Üks lihtne ja tõhus viis on regulaarselt hingamisharjutusi teha. Hinga sügavalt sisse ja välja, keskendudes igale hingetõmbele. Samuti on oluline leida aega enda jaoks – mine loodusesse jalutama või tegele mõne lemmiktegevusega, mis sind rahustab.\n\nSamuti ära unusta tervislikku toitumist ja piisavat und, mis on stressiga toimetuleku võti. Toitumine mängib olulist rolli, sest teatud toidud, nagu täisteratooted, pähklid ja puuviljad, aitavad tasakaalustada keha stressireaktsioone. Kui sul on pidev unepuudus, siis võib stressi tase samuti tõusta, seega leia viise, kuidas tagada endale kvaliteetne uni, näiteks vältides kofeiini õhtuti.",
     },
     {
       category: "FINANTS",
@@ -38,7 +38,7 @@ function Post() {
       time: "1hr ago",
       image: "https://picsum.photos/id/10/600/400",
       content:
-        "Tudengielu võib olla rahaliselt kitsi, kuid siiski on võimalik igapäevaelu kulusid vähendada..."
+        "Tudengielu võib olla rahaliselt kitsi, kuid siiski on võimalik igapäevaelu kulusid vähendada. Üks lihtsamaid nippe on eelarve koostamine – märgi üles kõik igakuised kulutused ja püüa neid hallata. Samuti tasub toitu ette planeerida ja kokkamine kodus on sageli odavam kui väljas söömine. Kui võimalik, kasuta tudengikartide allahindlusi ja võrdle hindasid enne suuremate ostude tegemist.\n\nKuid mul on olnud probleeme ka säästmisvõimaluste leidmisega, kuna tihti ei jätku raha isegi kõige põhiasjade jaoks. Olen proovinud erinevaid säästmisnippe, kuid need ei ole alati toiminud. Kas teil on mõni soovitus, kuidas oleks võimalik tudengina veelgi rohkem raha säästa, ilma et see liiga palju elukvaliteeti halvendaks?",
     },
     {
       category: "HEAOLU",
@@ -48,7 +48,7 @@ function Post() {
       time: "2hr ago",
       image: "https://picsum.photos/id/26/100/130",
       content:
-        "Mul on pidevalt probleeme magamisega – tihti ärkan öösel üles ja ei saa enam magama jääda..."
+        "Mul on pidevalt probleeme magamisega – tihti ärkan öösel üles ja ei saa enam magama jääda. Olen proovinud erinevaid unehügieeni nippe, nagu ekraanide vältimine enne magamaminekut ja magamistoa temperatuuri reguleerimine, kuid see ei ole eriti aidanud. Samuti olen lugenud, et regulaarselt liikumine võiks aidata, kuid isegi pärast õhtuseid jalutuskäike on mul raske magama jääda.\n\nKas kellelgi on veel kogemusi, kuidas saaks paremini magama jääda? Mida olete proovinud ja kas see on aidanud? Jagage oma soovitusi, palun!",
     },
     {
       category: "TEHNOLOOGIA",
@@ -58,8 +58,8 @@ function Post() {
       time: "2.5hr ago",
       image: "https://picsum.photos/id/23/100/130",
       content:
-        "Ma kasutan sageli AI tööriistu, et kiiremalt ülesandeid lahendada ja teavet otsida..."
-    }
+        "Ma kasutan sageli AI tööriistu, et kiiremalt ülesandeid lahendada ja teavet otsida, kuid mul on mure, et õpetajad võiksid sellele tähelepanu pöörata. Olen proovinud mitmeid AI-põhiseid tööriistu, kuid mureks on, et see võib viia selleni, et mind kahtlustatakse ülesannete kopeerimises või muus vales tegevuses.\n\nKas kellelgi on kogemusi, kuidas AI-d koolis õigesti kasutada, et mitte õpetajate tähelepanu äratada? Kuidas saaksin kasutada neid tööriistu oma õppimise täiustamiseks, jäädes samal ajal ausaks?",
+    },
   ];
 
   const savedPosts = JSON.parse(localStorage.getItem("posts")) || [];
@@ -81,7 +81,7 @@ function Post() {
       <Container className="post-page">
         <Row>
           <Col md={8}>
-            <Card className="mb-4 p-3 post" >
+            <Card className="mb-4 p-3 post">
               <h4 className="mb-2">{post.description}</h4>
               <p className="text-primary mb-3">{post.category}</p>
               <div className="d-flex align-items-center mb-3">
@@ -98,14 +98,17 @@ function Post() {
                 style={{
                   maxHeight: "300px",
                   objectFit: "cover",
-                  borderRadius: "1rem"
+                  borderRadius: "1rem",
                 }}
                 className="mb-3"
               />
               <Card.Text>{post.content}</Card.Text>
 
               <div className="d-flex gap-3 mt-4">
-                <Button variant="outline-primary" onClick={() => setLikes(likes + 1)}>
+                <Button
+                  variant="outline-primary"
+                  onClick={() => setLikes(likes + 1)}
+                >
                   <i className="bi bi-hand-thumbs-up"></i> {likes}
                 </Button>
                 <Button
@@ -121,7 +124,8 @@ function Post() {
                   variant={bookmarked ? "success" : "outline-success"}
                   onClick={() => setBookmarked(!bookmarked)}
                 >
-                  <i className="bi bi-bookmark"></i> {bookmarked ? "Bookmarked" : "Bookmark"}
+                  <i className="bi bi-bookmark"></i>{" "}
+                  {bookmarked ? "Bookmarked" : "Bookmark"}
                 </Button>
               </div>
             </Card>
@@ -133,7 +137,10 @@ function Post() {
                 <Card.Title>Kommentaarid</Card.Title>
 
                 {comments.map((comment, index) => (
-                  <div key={index} className="comment-box mb-3 p-2 bg-light rounded">
+                  <div
+                    key={index}
+                    className="comment-box mb-3 p-2 bg-light rounded"
+                  >
                     <strong>{comment.username}:</strong> {comment.text}
                     <div className="comment-actions mt-2 d-flex gap-3">
                       <Button variant="link" className="p-0 text-muted">

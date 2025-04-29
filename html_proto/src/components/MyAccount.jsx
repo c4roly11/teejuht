@@ -66,10 +66,6 @@ const MyAccount = () => {
               </ListGroup.Item>
             </ListGroup>
           </Card>
-
-          <Button variant="primary" className="new-post-btn">
-            <i className="bi bi-plus-circle"></i> Uus postitus
-          </Button>
         </div>
       </div>
     </div>
