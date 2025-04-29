@@ -6,6 +6,7 @@ import {
   Form,
   Button,
   Navbar as BsNavbar,
+  Dropdown,
 } from "react-bootstrap";
 
 function Navbar() {
@@ -39,8 +40,24 @@ function Navbar() {
               placeholder="Otsi postitust"
               className="me-2"
             />
-            <Button type="submit">Submit</Button>
+            <Button type="submit">Otsi</Button>
           </Form>
+
+          {/* Category Dropdown */}
+          <Dropdown>
+            <Dropdown.Toggle variant="secondary" id="dropdown-basic">
+              Kategooriad
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu>
+              <Dropdown.Item href="#/action-1">Karjäär & haridus</Dropdown.Item>
+              <Dropdown.Item href="#/action-2">Suhted</Dropdown.Item>
+              <Dropdown.Item href="#/action-3">Heaolu</Dropdown.Item>
+              <Dropdown.Item href="#/action-4">Finants</Dropdown.Item>
+              <Dropdown.Item href="#/action-5">Tehnoloogia</Dropdown.Item>
+              <Dropdown.Item href="#/action-6">Eneseareng</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
 
           {/* Login Button */}
           <Button className="custom-button" onClick={handleLoginClick}>
