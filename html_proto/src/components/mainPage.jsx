@@ -2,23 +2,10 @@ import React from "react";
 import "./MainPage.scss";
 import { useNavigate } from "react-router-dom";
 
-import {
-  Container,
-  Row,
-  Col,
-  Card,
-  Button,
-  Form,
-  Navbar,
-  InputGroup,
-  Stack,
-} from "react-bootstrap";
+import { Container, Row, Col, Card } from "react-bootstrap";
 
 function MainPage() {
   const navigate = useNavigate();
-  const handleLoginClick = () => {
-    navigate('/login');
-  };
 
   const posts = [
     {
@@ -57,39 +44,15 @@ function MainPage() {
 
   return (
     <div className="main-page">
-      <Navbar expand="lg" className="justify-content-between">
-        <Container>
-          <Stack
-            direction="horizontal"
-            gap={4}
-            className="w-100 justify-content-between"
-          >
-            {/* Brand */}
-            <Navbar.Brand style={{ fontFamily: "Borel", fontSize: "40px" }}>
-              Teejuht
-            </Navbar.Brand>
-
-            {/* Search Form */}
-            <Form className="d-flex">
-              <Form.Control
-                type="text"
-                placeholder="Otsi postitust"
-                className="me-2"
-              />
-              <Button type="submit">Submit</Button>
-            </Form>
-
-            {/* Login Button */}
-            <Button className="custom-button" onClick={handleLoginClick}>Logi sisse</Button>
-          </Stack>
-        </Container>
-      </Navbar>
-
       <Container>
         <Row className="g-4">
           {posts.map((post, idx) => (
             <Col key={idx} xs={12} sm={6} md={4}>
-              <Card className="post-card" onClick={() => navigate(`/post/${idx}`)} style={{ cursor: 'pointer' }}>
+              <Card
+                className="post-card"
+                onClick={() => navigate(`/post/${idx}`)}
+                style={{ cursor: "pointer" }}
+              >
                 <Row className="g-0">
                   <Col xs={4} md={4}>
                     <Card.Img src={post.image} className="card-img" />

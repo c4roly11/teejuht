@@ -22,12 +22,10 @@ const MyAccount = () => {
             gap={4}
             className="w-100 justify-content-between"
           >
-            {/* Brand */}
             <Navbar.Brand style={{ fontFamily: "Borel", fontSize: "40px" }}>
               Teejuht
             </Navbar.Brand>
 
-            {/* Search Form */}
             <Form className="d-flex">
               <Form.Control
                 type="text"
