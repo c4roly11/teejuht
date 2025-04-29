@@ -119,7 +119,7 @@ function Post() {
                   variant="outline-secondary"
                   onClick={() => setLikes(likes > 0 ? likes - 1 : 0)}
                 >
-                  <i className="bi bi-hand-thumbs-down"></i> Dislike
+                  <i className="bi bi-hand-thumbs-down"></i> 0
                 </Button>
                 <Button variant="outline-dark">
                   <i className="bi bi-send"></i>
@@ -129,7 +129,7 @@ function Post() {
                   onClick={() => setBookmarked(!bookmarked)}
                 >
                   <i className="bi bi-bookmark"></i>{" "}
-                  {bookmarked ? "Bookmarked" : "Bookmark"}
+                  {bookmarked ? "Salvestatud" : "Salvesta"}
                 </Button>
               </div>
             </Card>

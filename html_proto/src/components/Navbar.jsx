@@ -53,6 +53,14 @@ function Navbar() {
             gap={4}
             className="ms-auto d-none d-lg-flex align-items-center"
           >
+            <a
+              href="/style_guide.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-outline-secondary"
+            >
+              Stiiliraamat
+            </a>
             <div style={{ maxWidth: "300px" }}>
               <Form className="d-flex custom-search-form">
                 <Form.Control
@@ -97,6 +105,14 @@ function Navbar() {
 
           {/* Mobile */}
           <Stack direction="vertical" gap={3} className="d-lg-none mt-3">
+            <a
+              href="/style_guide.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-outline-secondary"
+            >
+              Stiiliraamat
+            </a>
             <Form className="d-flex custom-search-form">
               <Form.Control
                 type="text"
