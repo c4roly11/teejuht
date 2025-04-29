@@ -1,39 +1,36 @@
-/* Üldine konteiner stiil */
 .login-register-container {
-    width: 90%;
-    max-width: 400px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    margin: auto;
-  }
-  
-  /* Parem vertikaalne paigutus */
-  .login-register-container h3,
-  .login-register-container p {
-    text-align: center;
-  }
-  
-  .login-register-background {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .login-register-tabs {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  
-  .login-register-btn {
-    width: 100%;
-    margin-bottom: 1rem;
-  }
-  
-  .login-register-link {
-    text-align: center;
-  }
-  
+  width: 90%;
+  max-width: 400px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin: auto;
+}
+
+.login-register-container h3,
+.login-register-container p {
+  text-align: center;
+}
+
+.login-register-background {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-register-tabs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.login-register-btn {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.login-register-link {
+  text-align: center;
+}
