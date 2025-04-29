@@ -1,12 +1,12 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { Container, Card } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
+import PostCard from "./PostCard";
 
 function CategoryPage() {
   const { categoryName } = useParams();
 
   let posts = [];
-
   try {
     const stored = JSON.parse(localStorage.getItem("posts"));
     if (Array.isArray(stored)) {
@@ -28,23 +28,13 @@ function CategoryPage() {
       <h1 className="text-2xl fw-bold mb-4">
         Kategooria: {decodeURIComponent(categoryName)}
       </h1>
+
       {filtered.length > 0 ? (
-        filtered.map((post, index) => (
-          <Card key={index} className="mb-3 p-3">
-            <Card.Title>{post.description}</Card.Title>
-            <Card.Subtitle className="mb-2 text-muted">
-              {post.username} – {post.time}
-            </Card.Subtitle>
-            {post.image && (
-              <Card.Img
-                src={post.image}
-                style={{ maxHeight: "200px", objectFit: "cover" }}
-                className="mb-2"
-              />
-            )}
-            <Card.Text>{post.content.slice(0, 150)}...</Card.Text>
-          </Card>
-        ))
+        <Row className="g-4">
+          {filtered.map((post, idx) => (
+            <PostCard key={idx} post={post} index={idx} />
+          ))}
+        </Row>
       ) : (
         <p>Ühtegi postitust selles kategoorias ei leitud.</p>
       )}
