@@ -32,20 +32,22 @@ function Navbar() {
         <BsNavbar.Toggle aria-controls="basic-navbar-nav" />
       </Container>
 
-      <BsNavbar.Collapse id="navbar-collapse">
+      <BsNavbar.Collapse id="navbar-collapse" className="w-100">
         <Stack
           direction="horizontal"
           gap={4}
-          className="ms-auto d-none d-lg-flex align-items-center"
+          className="ms-auto d-none d-lg-flex align-items-center w-100"
         >
-          <Form className="d-flex">
-            <Form.Control
-              type="text"
-              placeholder="Otsi postitust"
-              className="me-2"
-            />
-            <Button type="submit">Otsi</Button>
-          </Form>
+          <div className="flex-grow-1">
+            <Form className="d-flex custom-search-form">
+              <Form.Control
+                type="text"
+                placeholder="Otsi postitust"
+                className="me-2"
+              />
+              <Button type="submit">Otsi</Button>
+            </Form>
+          </div>
 
           <Dropdown>
             <Dropdown.Toggle variant="secondary" id="dropdown-basic">
@@ -67,7 +69,7 @@ function Navbar() {
         </Stack>
 
         <Stack direction="vertical" gap={3} className="d-lg-none mt-3">
-          <Form className="d-flex">
+          <Form className="d-flex custom-search-form">
             <Form.Control
               type="text"
               placeholder="Otsi postitust"
