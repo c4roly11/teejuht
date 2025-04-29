@@ -1,6 +1,8 @@
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
 import "./LoginRegister.scss";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { AuthContext } from "../App";
+import { useNavigate } from "react-router-dom";
 import {
   MDBContainer,
   MDBTabs,
@@ -16,21 +18,22 @@ function LoginRegister() {
   const [activeTab, setActiveTab] = useState("login");
   const [showLoginForm, setShowLoginForm] = useState(true);
   const [showRegisterForm, setShowRegisterForm] = useState(false);
+  const { setIsLoggedIn } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    if (activeTab === "login") {
-      setShowLoginForm(true);
-      setShowRegisterForm(false);
-    } else if (activeTab === "register") {
-      setShowLoginForm(false);
-      setShowRegisterForm(true);
-    }
+    setShowLoginForm(activeTab === "login");
+    setShowRegisterForm(activeTab === "register");
   }, [activeTab]);
 
   const handleTabClick = (tab) => {
-    if (tab !== activeTab) {
-      setActiveTab(tab);
-    }
+    if (tab !== activeTab) setActiveTab(tab);
+  };
+
+  const handleLogin = () => {
+    // Simulate login success
+    setIsLoggedIn(true);
+    navigate("/"); // redirect to homepage
   };
 
   return (
@@ -60,7 +63,9 @@ function LoginRegister() {
             <MDBTabsPane open={showLoginForm}>
               <h3 className="text-center">Tere tulemast tagasi!</h3>
               <p className="text-center">
-                Logi sisse oma kontoga<br></br>Sinu anonüümsus on tagatud
+                Logi sisse oma kontoga
+                <br />
+                Sinu anonüümsus on tagatud
               </p>
 
               <MDBInput
@@ -76,7 +81,9 @@ function LoginRegister() {
                 type="password"
               />
 
-              <MDBBtn className="login-register-btn">Logi sisse</MDBBtn>
+              <MDBBtn className="login-register-btn" onClick={handleLogin}>
+                Logi sisse
+              </MDBBtn>
               <p className="login-register-link">
                 Pole kontot?{" "}
                 <a href="#!" onClick={() => handleTabClick("register")}>

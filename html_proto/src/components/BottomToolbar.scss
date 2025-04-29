@@ -1,45 +1,47 @@
-// components/BottomToolbar.scss
 .bottom-toolbar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: white;
-    border-top: 1px solid #ddd;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 0.5rem 0;
-    z-index: 999;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
-  }
-  
-  .toolbar-button {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: none;
-    border: none;
-    color: #333;
-    font-size: 1.25rem;
-    gap: 0.25rem;
-  }
-  
-  .toolbar-button span {
-    font-size: 0.75rem;
-  }
-  
-  .plus-button {
-    background-color: #007bff;
-    color: white;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    font-size: 1.5rem;
-    margin-top: -30px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    position: relative;
-    z-index: 1;
-  }
-  
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.5rem 0;
+  z-index: 999;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
+  height: 70px; // enough space to support floating button visually
+}
+
+.toolbar-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 1.25rem;
+  gap: 0.25rem;
+  z-index: 1;
+}
+
+.toolbar-button span {
+  font-size: 0.75rem;
+}
+
+.plus-button {
+  background-color: #007bff;
+  color: white;
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  font-size: 1.75rem;
+  position: absolute;
+  top: -32px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+}

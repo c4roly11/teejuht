@@ -27,7 +27,6 @@ $card-padding: 15px;
   .post-card {
     background-color: $background-color;
     border-radius: $card-border-radius;
-    overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease;
 
@@ -37,7 +36,7 @@ $card-padding: 15px;
 
     .row {
       display: flex;
-      flex-direction: row; // Image always on left
+      flex-direction: row;
       flex-wrap: nowrap;
     }
 

@@ -1,5 +1,4 @@
-import React from "react";
-import "./Navbar.scss";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   Container,
@@ -9,36 +8,91 @@ import {
   Navbar as BsNavbar,
   Dropdown,
 } from "react-bootstrap";
+import { AuthContext } from "../App";
+import "./Navbar.scss";
 
 function Navbar() {
+  const { isLoggedIn } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleLoginClick = () => {
     navigate("/login");
   };
 
+  const handleProfileClick = () => {
+    navigate("/account");
+  };
+
+  const categories = [
+    "Karjäär & haridus",
+    "Suhted",
+    "Heaolu",
+    "Finants",
+    "Tehnoloogia",
+    "Eneseareng",
+  ];
+
   return (
-    <BsNavbar expand="lg" className="bg-transparent shadow-none border-0 mt-3">
-      <Container
-        fluid
-        className="d-flex justify-content-between align-items-center"
-      >
-        <div className="d-flex align-items-center">
-          <BsNavbar.Brand style={{ fontFamily: "Borel", fontSize: "40px" }}>
-            Teejuht
-          </BsNavbar.Brand>
-        </div>
+    <BsNavbar
+      expand="lg"
+      collapseOnSelect
+      className="navbar-light bg-transparent shadow-none border-0 mt-3"
+    >
+      <Container fluid className="align-items-center">
+        <BsNavbar.Brand>Teejuht</BsNavbar.Brand>
 
-        <BsNavbar.Toggle aria-controls="basic-navbar-nav" />
-      </Container>
+        <BsNavbar.Toggle
+          aria-controls="navbar-collapse"
+          className="d-lg-none"
+        />
 
-      <BsNavbar.Collapse id="navbar-collapse" className="w-100">
-        <Stack
-          direction="horizontal"
-          gap={4}
-          className="ms-auto d-none d-lg-flex align-items-center w-100"
-        >
-          <div className="flex-grow-1">
+        <BsNavbar.Collapse id="navbar-collapse" className="ms-auto">
+          {/* Desktop Stack */}
+          <Stack
+            direction="horizontal"
+            gap={4}
+            className="ms-auto d-none d-lg-flex align-items-center"
+          >
+            <div style={{ maxWidth: "300px" }}>
+              <Form className="d-flex custom-search-form">
+                <Form.Control
+                  type="text"
+                  placeholder="Otsi postitust"
+                  className="me-2"
+                />
+                <Button type="submit">Otsi</Button>
+              </Form>
+            </div>
+
+            <Dropdown>
+              <Dropdown.Toggle variant="secondary" id="dropdown-basic">
+                Kategooriad
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+                {categories.map((cat, index) => (
+                  <Dropdown.Item key={index}>{cat}</Dropdown.Item>
+                ))}
+              </Dropdown.Menu>
+            </Dropdown>
+
+            {isLoggedIn ? (
+              <img
+                src="https://i.pravatar.cc/40"
+                alt="Profiilipilt"
+                aria-label="Profiil"
+                className="rounded-circle"
+                style={{ width: "40px", height: "40px", cursor: "pointer" }}
+                onClick={handleProfileClick}
+              />
+            ) : (
+              <Button className="custom-button" onClick={handleLoginClick}>
+                Logi sisse
+              </Button>
+            )}
+          </Stack>
+
+          {/* Mobile Stack */}
+          <Stack direction="vertical" gap={3} className="d-lg-none mt-3">
             <Form className="d-flex custom-search-form">
               <Form.Control
                 type="text"
@@ -47,56 +101,35 @@ function Navbar() {
               />
               <Button type="submit">Otsi</Button>
             </Form>
-          </div>
 
-          <Dropdown>
-            <Dropdown.Toggle variant="secondary" id="dropdown-basic">
-              Kategooriad
-            </Dropdown.Toggle>
-            <Dropdown.Menu>
-              <Dropdown.Item href="#/action-1">Karjäär & haridus</Dropdown.Item>
-              <Dropdown.Item href="#/action-2">Suhted</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">Heaolu</Dropdown.Item>
-              <Dropdown.Item href="#/action-4">Finants</Dropdown.Item>
-              <Dropdown.Item href="#/action-5">Tehnoloogia</Dropdown.Item>
-              <Dropdown.Item href="#/action-6">Eneseareng</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
+            <Dropdown>
+              <Dropdown.Toggle variant="secondary" id="dropdown-basic-mobile">
+                Kategooriad
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+                {categories.map((cat, index) => (
+                  <Dropdown.Item key={index}>{cat}</Dropdown.Item>
+                ))}
+              </Dropdown.Menu>
+            </Dropdown>
 
-          <Button className="custom-button" onClick={handleLoginClick}>
-            Logi sisse
-          </Button>
-        </Stack>
-
-        <Stack direction="vertical" gap={3} className="d-lg-none mt-3">
-          <Form className="d-flex custom-search-form">
-            <Form.Control
-              type="text"
-              placeholder="Otsi postitust"
-              className="me-2"
-            />
-            <Button type="submit">Otsi</Button>
-          </Form>
-
-          <Dropdown>
-            <Dropdown.Toggle variant="secondary" id="dropdown-basic-mobile">
-              Kategooriad
-            </Dropdown.Toggle>
-            <Dropdown.Menu>
-              <Dropdown.Item href="#/action-1">Karjäär & haridus</Dropdown.Item>
-              <Dropdown.Item href="#/action-2">Suhted</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">Heaolu</Dropdown.Item>
-              <Dropdown.Item href="#/action-4">Finants</Dropdown.Item>
-              <Dropdown.Item href="#/action-5">Tehnoloogia</Dropdown.Item>
-              <Dropdown.Item href="#/action-6">Eneseareng</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-
-          <Button className="custom-button" onClick={handleLoginClick}>
-            Logi sisse
-          </Button>
-        </Stack>
-      </BsNavbar.Collapse>
+            {isLoggedIn ? (
+              <img
+                src="https://i.pravatar.cc/40"
+                alt="Profiilipilt"
+                aria-label="Profiil"
+                className="rounded-circle"
+                style={{ width: "40px", height: "40px", cursor: "pointer" }}
+                onClick={handleProfileClick}
+              />
+            ) : (
+              <Button className="custom-button" onClick={handleLoginClick}>
+                Logi sisse
+              </Button>
+            )}
+          </Stack>
+        </BsNavbar.Collapse>
+      </Container>
     </BsNavbar>
   );
 }
