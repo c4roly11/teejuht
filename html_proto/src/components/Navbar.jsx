@@ -53,14 +53,11 @@ function Navbar() {
             gap={4}
             className="ms-auto d-none d-lg-flex align-items-center"
           >
-            <a
-              href="/style_guide.html"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-outline-secondary"
-            >
-              Stiiliraamat
-            </a>
+
+            <Button className="btn btn-outline-secondary" onClick={() => navigate("/style-guide.html")}>
+                Stiiliraamat
+            </Button>
+          
             <div style={{ maxWidth: "300px" }}>
               <Form className="d-flex custom-search-form">
                 <Form.Control

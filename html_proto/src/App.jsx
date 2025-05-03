@@ -64,7 +64,7 @@ function App() {
             />
 
             <Route
-              path="/style_guide.html"
+              path="/style-guide.html"
               element={
                 <WithNavbar>
                   <StyleGuide />
