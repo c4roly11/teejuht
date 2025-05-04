@@ -1,15 +1,19 @@
-body {
-  margin: 0;
-  padding: 0;
-  padding-bottom: env(safe-area-inset-bottom);
-  font-family: "ABeeZee", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  height: 100vh;
+.borel-regular {
+    font-family: "Borel", cursive;
+    font-weight: 400;
+    font-style: normal;
 }
 
-.app-container {
-  position: relative;
-  padding-bottom: 90px;
-  min-height: 100vh;
-}
+.abeezee-regular {
+    font-family: "ABeeZee", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  
+  body {
+    margin: 0;
+    background-image: url("./background.jpg");
+    min-height: 100vh;
+    font-family: "ABeeZee", sans-serif;
+  }

@@ -1,11 +1,11 @@
 .navbar-light .container {
   display: flex;
-  align-items: center; // vertically center brand + toggle
+  align-items: center;
   justify-content: space-between;
 }
 
 .navbar .navbar-brand {
-  font-family: "Borel", cursive;
+  font-family: "Borel";
   font-size: 40px;
   padding: 0;
   margin: 0;
