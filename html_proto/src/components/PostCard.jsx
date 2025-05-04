@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, Col, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import "./PostCard.scss"; // optional for styles
+import "./PostCard.scss";
 
 function PostCard({ post, index }) {
   const navigate = useNavigate();

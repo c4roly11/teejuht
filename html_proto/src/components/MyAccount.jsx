@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Button, Image, ListGroup } from "react-bootstrap";
+import { Card, Image, ListGroup } from "react-bootstrap";
 import "./MyAccount.scss";
 
 const MyAccount = () => {

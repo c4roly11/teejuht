@@ -17,7 +17,7 @@ function App() {
 
   return (
     <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
-      <Router>
+      <Router basename="/~arajas/iti0209">
         <div className="app-container">
           <Routes>
             <Route

@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "./Post.scss";
 import { Container, Row, Col, Card, Button, Form } from "react-bootstrap";
 
 function Post() {
   const { id } = useParams();
-  const navigate = useNavigate();
 
   const [comments, setComments] = useState([
     { username: "krabi_vanaamees_34", text: "Väga kasulik postitus!" },

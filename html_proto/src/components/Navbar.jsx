@@ -53,11 +53,13 @@ function Navbar() {
             gap={4}
             className="ms-auto d-none d-lg-flex align-items-center"
           >
-
-            <Button className="btn btn-outline-secondary" onClick={() => navigate("/style-guide.html")}>
-                Stiiliraamat
+            <Button
+              className="custom-button"
+              onClick={() => navigate("/style-guide.html")}
+            >
+              Stiiliraamat
             </Button>
-          
+
             <div style={{ maxWidth: "300px" }}>
               <Form className="d-flex custom-search-form">
                 <Form.Control
