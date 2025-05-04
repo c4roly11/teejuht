@@ -14,7 +14,7 @@ import {
   MDBInput,
 } from "mdb-react-ui-kit";
 
-export default function StyleGuide() {
+function StyleGuide() {
   return (
     <div className="container py-5">
       <h1 className="mb-5 fw-bold">Stiiliraamat</h1>
@@ -391,3 +391,5 @@ export default function StyleGuide() {
     </div>
   );
 }
+
+export default StyleGuide;

@@ -104,14 +104,12 @@ function Navbar() {
 
           {/* Mobile */}
           <Stack direction="vertical" gap={3} className="d-lg-none mt-3">
-            <a
-              href="/style_guide.html"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-outline-secondary"
+          <Button
+              className="custom-button"
+              onClick={() => navigate("/style-guide.html")}
             >
               Stiiliraamat
-            </a>
+            </Button>
             <Form className="d-flex custom-search-form">
               <Form.Control
                 type="text"
