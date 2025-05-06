@@ -1,6 +1,16 @@
 .post-page {
   padding-bottom: 40px;
 
+  .post-time {
+    font-size: 0.9rem;
+  }
+  
+  .post-image {
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 1rem;
+  }  
+
   .post {
     border-radius: 1rem;
   }

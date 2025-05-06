@@ -60,7 +60,7 @@ function Navbar() {
               Stiiliraamat
             </Button>
 
-            <div style={{ maxWidth: "300px" }}>
+            <div className="search-container">
               <Form className="d-flex custom-search-form">
                 <Form.Control
                   type="text"
@@ -92,7 +92,6 @@ function Navbar() {
                 src="https://i.pravatar.cc/40"
                 alt="Profiilipilt"
                 className="rounded-circle"
-                style={{ width: "40px", height: "40px", cursor: "pointer" }}
                 onClick={handleProfileClick}
               />
             ) : (
@@ -140,7 +139,6 @@ function Navbar() {
                 src="https://i.pravatar.cc/40"
                 alt="Profiilipilt"
                 className="rounded-circle"
-                style={{ width: "40px", height: "40px", cursor: "pointer" }}
                 onClick={handleProfileClick}
               />
             ) : (

@@ -60,11 +60,11 @@ function StyleGuide() {
       <section className="mb-5">
         <h2 className="h4 border-bottom pb-2 mb-3">3. Värvipalett</h2>
         <div className="d-flex gap-3">
-          <div className="rounded bg-primary" style={{ width: '3rem', height: '3rem' }}></div>
-          <div className="rounded bg-secondary" style={{ width: '3rem', height: '3rem' }}></div>
-          <div className="rounded border border-secondary" style={{width: '3rem', height: '3rem', backgroundColor: '#DBE7F0'}}></div>
-          <div className="rounded border border-secondary" style={{width: '3rem', height: '3rem', backgroundColor: 'white'}}></div>
-          </div>
+          <div className="rounded bg-primary color-swatch"></div>
+          <div className="rounded bg-secondary color-swatch"></div>
+          <div className="rounded border border-secondary bg-light-blue color-swatch"></div>
+          <div className="rounded border border-secondary bg-white color-swatch"></div>
+        </div>
       </section>
 
       {/* 4. Ikonograafia */}
@@ -126,13 +126,12 @@ function StyleGuide() {
         <div className="d-flex w-100">
           <Card
             className="post-card w-100 d-flex flex-column"
-            style={{ cursor: "pointer" }}
           >
             <Row className="g-0 flex-grow-1 align-items-stretch">
               <Col xs={4}>
                 <Card.Img
                   src="https://picsum.photos/id/237/100/130"
-                  className="card-img h-100"
+                  className="post-card-img h-100"
                 />
               </Col>
               <Col xs={8}>
@@ -300,7 +299,7 @@ function StyleGuide() {
                     <div className="d-flex align-items-center mb-3">
                       <div>
                         <strong>Kasutajanimi</strong>
-                        <div className="text-muted" style={{ fontSize: "0.9rem" }}>
+                        <div className="text-muted">
                           aeg
                         </div>
                       </div>
@@ -308,12 +307,7 @@ function StyleGuide() {
                     <Card.Img
                       variant="top"
                       src="https://picsum.photos/id/237/100/130"
-                      style={{
-                        maxHeight: "300px",
-                        objectFit: "cover",
-                        borderRadius: "1rem",
-                      }}
-                      className="mb-3"
+                      className="card-img-fit mb-3"
                     />
                     <Card.Text>Sisu</Card.Text>
       

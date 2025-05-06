@@ -33,6 +33,18 @@
   padding-right: 10px;
 }
 
+.search-container {
+  max-width: 300px;
+}
+
+.rounded-circle {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+
 @media (min-width: 992px) {
   .custom-button {
     min-width: 140px;

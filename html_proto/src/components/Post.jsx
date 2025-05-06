@@ -90,20 +90,13 @@ function Post() {
               <div className="d-flex align-items-center mb-3">
                 <div>
                   <strong>{post.username}</strong>
-                  <div className="text-muted" style={{ fontSize: "0.9rem" }}>
-                    {post.time}
-                  </div>
+                  <div className="post-time text-muted">{post.time}</div>
                 </div>
               </div>
               <Card.Img
                 variant="top"
                 src={post.image}
-                style={{
-                  maxHeight: "300px",
-                  objectFit: "cover",
-                  borderRadius: "1rem",
-                }}
-                className="mb-3"
+                className="mb-3 post-image"
               />
               <Card.Text>{post.content}</Card.Text>
 

@@ -11,7 +11,6 @@ function PostCard({ post, index }) {
       <Card
         className="post-card w-100 d-flex flex-column"
         onClick={() => navigate(`/post/${index}`)}
-        style={{ cursor: "pointer" }}
       >
         <Row className="g-0 flex-grow-1 align-items-stretch">
           <Col xs={4} sm={4} md={5} lg={4}>
