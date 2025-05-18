@@ -8,6 +8,7 @@ The project is hosted on the **Turing server** and can be accessed here:  [http:
 
 Figma design: [https://www.figma.com/design/YpzB1Mvx9vmNVHWoZWalAq/Projekt-1?node-id=0-1&t=cv6bpm4OPKVc79ss-1](https://www.figma.com/design/YpzB1Mvx9vmNVHWoZWalAq/Projekt-1?node-id=0-1&t=cv6bpm4OPKVc79ss-1)
 
+Note: The original repository and collaboration took place in a private GitLab project due to course requirements.
 ---
 
 ## Project Purpose
